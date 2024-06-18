@@ -5,7 +5,9 @@ from prefect.client.schemas.actions import DeploymentScheduleCreate
 if TYPE_CHECKING:
     from prefect.client.schemas.schedules import SCHEDULE_TYPES
 
-FlexibleScheduleList = Sequence[Union[DeploymentScheduleCreate, dict, "SCHEDULE_TYPES"]]
+FlexibleScheduleList = Sequence[
+    Union[DeploymentScheduleCreate, dict[str, Any], "SCHEDULE_TYPES"]
+]
 
 
 def create_deployment_schedule_create(
